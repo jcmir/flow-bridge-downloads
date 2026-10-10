@@ -1,11 +1,19 @@
 # FLOW BRIDGE Chrome Extension v0.1.1 — Windows Beta
 
-Официальный релиз-кандидат слоя доступности интерфейса Google Flow для веб-браузера Google Chrome.
+Официальный предварительный выпуск (Pre-release) слоя доступности интерфейса Google Flow для веб-браузера Google Chrome.
+
+> **Статус выпуска**: `Pre-release` (Windows Beta).  
+> **Репозиторий распространения**: [jcmir/flow-bridge-downloads](https://github.com/jcmir/flow-bridge-downloads)
+
+---
 
 ## Состав релиза
+
 * **Дистрибутив**: `FLOW_BRIDGE_Chrome_Extension_v0.1.1.zip`
 * **Контрольная сумма (SHA-256)**:
-  `f7651b1119b35812bf3a9208ef05c892a803dc4da2a7b4e4b1f58fa905b743dd`
+  ```text
+  f7651b1119b35812bf3a9208ef05c892a803dc4da2a7b4e4b1f58fa905b743dd
+  ```
 * **Формат установки**: Распакованное расширение (Unpacked Extension, Google Chrome 111+)
 
 ---
@@ -44,4 +52,12 @@
 4. Включите **«Режим разработчика»** (Developer mode).
 5. Нажмите **«Загрузить распакованное расширение»** (Load unpacked) и выберите папку `flow-bridge-extension`.
 
-Подробная документация: см. [INSTALL.md](INSTALL.md) и [PRIVACY.md](PRIVACY.md).
+---
+
+## Документация репозитория
+
+* [Инструкция по установке (INSTALL.md)](https://github.com/jcmir/flow-bridge-downloads/blob/main/INSTALL.md)
+* [Политика конфиденциальности (PRIVACY.md)](https://github.com/jcmir/flow-bridge-downloads/blob/main/PRIVACY.md)
+* [Политика безопасности (SECURITY.md)](https://github.com/jcmir/flow-bridge-downloads/blob/main/SECURITY.md)
+* [История изменений (CHANGELOG.md)](https://github.com/jcmir/flow-bridge-downloads/blob/main/CHANGELOG.md)
+* [Контрольные суммы (SHA256SUMS)](https://github.com/jcmir/flow-bridge-downloads/blob/main/SHA256SUMS)
