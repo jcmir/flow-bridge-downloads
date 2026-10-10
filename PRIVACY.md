@@ -13,22 +13,47 @@
 
 ---
 
-## 2. Что передаётся на сервер (Техническая телеметрия флота)
+## 2. Серверные маршруты и передаваемые данные
 
-Для обеспечения надежности, своевременной доставки команд безопасности (kill switch) и отслеживания технических сбоев расширение периодически отправляет минимальный набор **технических диагностических сигналов** (whitelist-only schema):
+Расширение взаимодействует исключительно с официальным бэкендом инфраструктуры:
+`https://flow-bridge-release.jcmir.workers.dev`
 
-| Параметр | Описание | Назначение |
-|---|---|---|
-| **Идентификатор установки (`installation_id`)** | Случайный UUIDv4, генерируемый локально при первой установке | Подсчёт активного размера флота без идентификации личности |
-| **Версия расширения (`version`)** | Номер версии (например, `0.1.1`) | Контроль устаревания версий и совместимости |
-| **Тип события (`event_type`)** | `INSTALL`, `STARTUP`, `CONTROL_ADOPTED`, `HEARTBEAT`, `ERROR` | Мониторинг жизненного цикла и доступности |
-| **Код ошибки (`error_category`)** | Технический идентификатор сбоя (напр., `NETWORK_ERROR`, `CONTROL_FETCH_FAILED`) | Выявление сбоев синхронизации удаленного управления |
-| **Ревизия управления (`control_revision`)** | Числовой номер текущей принятой ревизии манифеста | Проверка актуальности применения команд безопасности |
-| **Версия браузера (`browser_major_version`)** | Мажорная версия Chromium (например, `130`) | Контроль совместимости с версиями движка Chromium |
-| **Платформа (`platform`)** | Идентификатор ОС (`WINDOWS`, `MAC`, `LINUX`) | Оценка стабильности на поддерживаемых платформах |
+Используются три строго ограниченных маршрута:
 
-Все сетевые запросы телеметрии направляются исключительно на защищенный endpoint:
-`https://flow-bridge-release.jcmir.workers.dev/v1/extension/telemetry`
+### А. Получение команд управления: `GET /v1/extension/control`
+* **Назначение**: Периодическая проверка статуса работы расширения (Kill Switch / Remote Control).
+* **Передаваемые данные**: Стандартные заголовки HTTP-запроса браузера. Никаких пользовательских идентификаторов или данных страницы не передается.
+* **Ответ сервера**: Манифест с криптографической подписью Ed25519 (статус: `ACTIVE`, `DISABLED`, `MAINTENANCE` или `UPDATE_REQUIRED`, номер ревизии и срок действия).
+
+### Б. Регистрация установки: `POST /v1/extension/register`
+* **Назначение**: Однократная анонимная регистрация новой установки для выдачи ключа телеметрии.
+* **Передаваемые данные (JSON)**:
+  - `installation_id` — случайный анонимный UUIDv4, сгенерированный локально;
+  - `product` — строковый идентификатор продукта (`FLOW_BRIDGE_EXTENSION`);
+  - `extension_version` — версия расширения (например, `0.1.1`);
+  - `platform` — платформа ОС (`WINDOWS`, `MAC`, `LINUX`, `OTHER`);
+  - `browser_major_version` — мажорная версия Chromium (целое число, например `130`).
+* **Ответ сервера**: Выдача локального ключа аутентификации телеметрии (`telemetry_credential`).
+
+### В. Техническая телеметрия флота: `POST /v1/extension/telemetry`
+* **Назначение**: Диагностика стабильности работы, отслеживание сбоев синхронизации и оценка размера активного флота.
+* **Заголовки**: `X-Extension-Key` (локальный токен телеметрии, выданный при регистрации).
+* **Тело запроса (строгий whitelist из 15 параметров)**:
+  - `event_id` — уникальный случайный UUIDv4 события;
+  - `installation_id` — анонимный UUIDv4 установки;
+  - `product` — `FLOW_BRIDGE_EXTENSION`;
+  - `extension_version` — версия расширения;
+  - `platform` — платформа ОС;
+  - `browser_major_version` — мажорная версия Chromium;
+  - `control_revision` — номер принятой ревизии манифеста управления;
+  - `control_state` — статус управления (`ACTIVE`, `MAINTENANCE`, `UPDATE_REQUIRED`, `DISABLED`, `CONTROL_UNAVAILABLE`);
+  - `compatibility_revision` — ревизия совместимости;
+  - `manifest_adopted` — флаг успешного принятия манифеста (1 или 0);
+  - `runtime_state` — техническое состояние рантайма (`INITIALIZING`, `READY`, `INJECTED`, `PATCHED`, `DISABLED`, `BLOCKED`, `ERROR`, `UNKNOWN`);
+  - `flow_reachability_state` — диагностический статус доступности интерфейса (`UNKNOWN`, `FLOW_REACHED`, `UNSUPPORTED_COUNTRY`, `CONTROL_MAINTENANCE`, `CONTROL_DISABLED`, `UPDATE_REQUIRED`, `RUNTIME_ERROR`);
+  - `error_category` — категория ошибки (`NONE`, `NETWORK_ERROR`, `CONTROL_FETCH_FAILED`, `CONTROL_VERIFICATION_FAILED`, `CONTROL_EXPIRED`, `ROLLBACK_REJECTED`, `PARSE_ERROR`, `INJECTION_FAILED`, `AUTH_FAILED`, `RUNTIME_EXCEPTION`, `UNKNOWN`);
+  - `event_type` — тип события (`INSTALL`, `STARTUP`, `CONTROL_ADOPTED`, `HEARTBEAT`, `ERROR`);
+  - `observed_at` — время фиксации события (UTC ISO 8601).
 
 ---
 
