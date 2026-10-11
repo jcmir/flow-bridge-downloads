@@ -18,7 +18,7 @@
 
 | Файл | Описание | Версия | Контрольная сумма (SHA-256) |
 |---|---|---|---|
-| `FLOW_BRIDGE_Chrome_Extension_v0.1.1.zip` | Архив расширения FLOW BRIDGE | `0.1.1 Beta` | `f7651b1119b35812bf3a9208ef05c892a803dc4da2a7b4e4b1f58fa905b743dd` |
+| `FLOW_BRIDGE_Chrome_Extension_v0.1.1.zip` | Архив расширения FLOW BRIDGE | `0.1.1 Beta` | `89da7545e0916d9df48bc82e3eb22a39b89313f4e003801485276fe148fdac04` |
 | [`SHA256SUMS`](SHA256SUMS) | Контрольная сумма дистрибутива | — | — |
 
 ---
