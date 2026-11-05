@@ -1,6 +1,17 @@
-# Установка FLOW BRIDGE v0.1.1 Beta
+# Установка FLOW BRIDGE для Windows x64
 
-Поддерживаемые платформы: Windows и macOS.  
+1. Скачайте `FlowBridge_v0.1.8_Setup.exe` и `SHA256SUMS.txt` на [странице релиза](https://github.com/jcmir/flow-bridge-downloads/releases/tag/v0.1.8). Официальное зеркало — [сервер FLOW BRIDGE](https://flowbridge-api.ragzond.ru/downloads/FlowBridge_v0.1.8_Setup.exe).
+2. В PowerShell выполните `Get-FileHash .\FlowBridge_v0.1.8_Setup.exe -Algorithm SHA256`. Сверьте результат с файлом контрольных сумм.
+3. Установщик не подписан Authenticode. Проверьте источник загрузки и контрольную сумму перед запуском. Затем следуйте инструкциям установщика и ознакомьтесь с показываемыми им условиями.
+
+Приложение бесплатно, исходный код собственных компонентов закрыт. Проект лицензии допускает бесплатное использование физическими лицами и организациями, включая обычную коммерческую деятельность. Проекты обновлённых условий доступны для review: [лицензия](LICENSE.txt), [EULA](EULA.md), [конфиденциальность](PRIVACY.md) и [уведомления](THIRD_PARTY_NOTICES.md).
+
+---
+
+
+## Установка отдельного расширения Chrome 0.1.1 Beta
+
+Поддерживаемые платформы: Windows и macOS.
 Браузер: Google Chrome.
 
 ---
@@ -52,7 +63,7 @@
 * Убедитесь, что выбран правильный каталог `flow-bridge-extension`, в котором находится файл `manifest.json`.
 * Проверьте подключение к интернету.
 * Обновите страницу Google Flow (клавиша **F5** в Windows или **Cmd+R** в macOS).
-* Если проблема сохраняется, обратитесь в службу поддержки: https://t.me/ITHRONIC.
+* Если проблема сохраняется, обратитесь в службу поддержки: [goliafbattle@gmail.com](mailto:goliafbattle@gmail.com).
 
 ---
 
@@ -73,4 +84,4 @@
 
 ---
 
-**Поддержка:** https://t.me/ITHRONIC
+**Поддержка:** [goliafbattle@gmail.com](mailto:goliafbattle@gmail.com)
