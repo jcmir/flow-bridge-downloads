@@ -63,7 +63,7 @@
 * Убедитесь, что выбран правильный каталог `flow-bridge-extension`, в котором находится файл `manifest.json`.
 * Проверьте подключение к интернету.
 * Обновите страницу Google Flow (клавиша **F5** в Windows или **Cmd+R** в macOS).
-* Если проблема сохраняется, обратитесь в службу поддержки: https://t.me/ITHRONIC.
+* Если проблема сохраняется, обратитесь в службу поддержки: [goliafbattle@gmail.com](mailto:goliafbattle@gmail.com).
 
 ---
 
@@ -84,4 +84,4 @@
 
 ---
 
-**Поддержка:** https://t.me/ITHRONIC
+**Поддержка:** [goliafbattle@gmail.com](mailto:goliafbattle@gmail.com)

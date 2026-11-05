@@ -1,6 +1,6 @@
 # Конфиденциальность FLOW BRIDGE для Windows 0.1.8
 
-> Проект для согласования. Оператор данных — [DATA_CONTROLLER_NAME]. Контакт по вопросам данных — [PRIVACY_CONTACT].
+> Проект для согласования. Оператор данных — [DATA_CONTROLLER_NAME] (OWNER_REQUIRED). Контакт по вопросам конфиденциальности и запросам на удаление данных — [goliafbattle@gmail.com](mailto:goliafbattle@gmail.com).
 
 | Обработка | Категории и цель |
 |---|---|
