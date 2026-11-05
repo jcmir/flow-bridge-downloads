@@ -13,7 +13,33 @@
 - Cargo build dependencies, proc-macro и тестовые зависимости учитываются отдельно. Их использование при сборке само по себе не делает их распространяемыми библиотеками. Для сгенерированных или встроенных фрагментов проверяется фактическое включение.
 - Cloudflare Worker/D1 и серверные библиотеки рассматриваются отдельно от Windows Installer. Chrome и Google Flow используются как внешние продукты по их собственным условиям.
 
-Перед утверждением нужны недостающие тексты из upstream-источников, сверка вложенных уведомлений и подтверждение, что уведомления предоставляются получателю дистрибутива способом, требуемым каждой лицензией. Публикация этого проекта сама по себе не подтверждает соблюдение требований уже выпущенной сборкой.
+Перед утверждением нужны сверка вложенных уведомлений и подтверждение, что уведомления предоставляются получателю дистрибутива способом, требуемым каждой лицензией. Публикация этого проекта сама по себе не подтверждает соблюдение требований уже выпущенной сборкой.
+
+## Проверенные тексты для 11 архивов Cargo
+
+Пакеты содержат декларацию лицензии. Отдельный файл в архиве отсутствовал, поэтому взят текст из коммита, указанного в метаданных публикации соответствующего пакета. В проверенных деревьях для этих пакетов отдельных NOTICE не найдено. Для AccessKit сохранён также upstream LICENSE.chromium, поскольку его применимость зависит от включения соответствующих фрагментов. Выбор MIT относится только к перечисленным выражениям с OR.
+
+| Пакет | Точный upstream | Выбранная лицензия | Тексты |
+|---|---|---|---|
+| accesskit 0.12.3 | [AccessKit/accesskit](https://github.com/AccessKit/accesskit/tree/56bf6f2f51b352b35bd4c8c72b7ed18ad9470e2f) | MIT | [LICENSE-MIT](https://github.com/AccessKit/accesskit/blob/56bf6f2f51b352b35bd4c8c72b7ed18ad9470e2f/LICENSE-MIT), [LICENSE.chromium](https://github.com/AccessKit/accesskit/blob/56bf6f2f51b352b35bd4c8c72b7ed18ad9470e2f/LICENSE.chromium) |
+| accesskit_consumer 0.16.1 | [AccessKit/accesskit](https://github.com/AccessKit/accesskit/tree/1930c72276b521f06e3e006904d578948fa36955) | MIT | [LICENSE-MIT](https://github.com/AccessKit/accesskit/blob/1930c72276b521f06e3e006904d578948fa36955/LICENSE-MIT), [LICENSE.chromium](https://github.com/AccessKit/accesskit/blob/1930c72276b521f06e3e006904d578948fa36955/LICENSE.chromium) |
+| accesskit_windows 0.15.1 | [AccessKit/accesskit](https://github.com/AccessKit/accesskit/tree/1930c72276b521f06e3e006904d578948fa36955) | MIT | [LICENSE-MIT](https://github.com/AccessKit/accesskit/blob/1930c72276b521f06e3e006904d578948fa36955/LICENSE-MIT), [LICENSE.chromium](https://github.com/AccessKit/accesskit/blob/1930c72276b521f06e3e006904d578948fa36955/LICENSE.chromium) |
+| accesskit_winit 0.16.1 | [AccessKit/accesskit](https://github.com/AccessKit/accesskit/tree/c80cdf70421d054e9be5514c8e0f1fc455eeb375) | Apache-2.0 | [LICENSE-APACHE](https://github.com/AccessKit/accesskit/blob/c80cdf70421d054e9be5514c8e0f1fc455eeb375/LICENSE-APACHE), [LICENSE.chromium](https://github.com/AccessKit/accesskit/blob/c80cdf70421d054e9be5514c8e0f1fc455eeb375/LICENSE.chromium) |
+| clipboard-win 5.4.1 | [DoumanAsh/clipboard-win](https://github.com/DoumanAsh/clipboard-win/tree/3b27cf2bfd1adcfa6e0264eb51c1025ddaf0f342) | BSL-1.0 | [LICENSE](https://github.com/DoumanAsh/clipboard-win/blob/3b27cf2bfd1adcfa6e0264eb51c1025ddaf0f342/LICENSE) |
+| ecolor 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+| eframe 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+| egui 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+| egui-winit 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+| egui_glow 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+| emath 0.28.1 | [emilk/egui](https://github.com/emilk/egui/tree/abab06867cdbc8966cf1de1e5429a7b7f9126af2) | MIT | [LICENSE-MIT](https://github.com/emilk/egui/blob/abab06867cdbc8966cf1de1e5429a7b7f9126af2/LICENSE-MIT) |
+
+## Inno Setup и ресурсы
+
+- Журнал сборки подтверждает Inno Setup 6.7.3, Setup.e32, чтение isunzlib.dll и языковых ресурсов Default.isl и Russian.isl. Сценарий использует ZIP. Присутствие других компонентов из дерева upstream не следует из их наличия в репозитории.
+- Лицензия 6.7.3 допускает использование и распространение при сохранении применимых уведомлений и адресов сайта, указании происхождения и маркировке модификаций. Запрос производителя о покупке коммерческой лицензии изложен отдельно. Производитель указывает, что покупка не строго обязательна. Проверка бизнес-контекста остаётся у владельца. [Лицензия](https://github.com/jrsoftware/issrc/blob/is-6_7_3/license.txt) · [FAQ производителя](https://jrsoftware.org/isorder.php)
+- **BLOCKED — isunzlib.dll и вложенные компоненты Setup.** Подтверждена роль DLL в сборке. Нужна трассировка точной версии zlib и применимых уведомлений для релизных байтов, а также проверка охвата языковых ресурсов и прочих встроенных частей. Текст UniPs приведён как справочный upstream-текст, включение в бинарник требует отдельного подтверждения.
+- **BLOCKED — flow-bridge.ico.** Файл входит в полезную нагрузку. Имя и хеш подтверждают идентичность, но не происхождение и права. Лицензия до подтверждения владельца не назначается.
+- **BLOCKED — окончательная комплектность.** Для Rust runtime, встроенных подкомпонентов и передачи notices получателю нужна проверка релизной комплектации. См. [решения владельца](OWNER_DECISIONS.md).
 
 ## Граф Windows x64
 
@@ -22,10 +48,10 @@
 
 | ab_glyph 0.2.32 | Apache-2.0 | LICENSE |
 | ab_glyph_rasterizer 0.1.10 | Apache-2.0 | LICENSE |
-| accesskit 0.12.3 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| accesskit_consumer 0.16.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| accesskit_windows 0.15.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| accesskit_winit 0.16.1 | Apache-2.0 | Текст не найден в корне пакета |
+| accesskit 0.12.3 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| accesskit_consumer 0.16.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| accesskit_windows 0.15.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| accesskit_winit 0.16.1 | Apache-2.0 | См. проверенные upstream-тексты выше |
 | adler2 2.0.1 | 0BSD OR MIT OR Apache-2.0 | LICENSE-0BSD, LICENSE-APACHE, LICENSE-MIT |
 | ahash 0.8.12 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
 | aho-corasick 1.1.5 | Unlicense OR MIT | COPYING, LICENSE-MIT, UNLICENSE |
@@ -49,7 +75,7 @@
 | clap 4.6.7 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
 | clap_builder 4.6.7 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
 | clap_lex 1.1.1 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
-| clipboard-win 5.4.1 | BSL-1.0 | Текст не найден в корне пакета |
+| clipboard-win 5.4.1 | BSL-1.0 | См. проверенные upstream-тексты выше |
 | colorchoice 1.0.5 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
 | const-oid 0.10.2 | Apache-2.0 OR MIT | LICENSE-APACHE, LICENSE-MIT |
 | cpufeatures 0.2.17 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
@@ -62,14 +88,14 @@
 | data-encoding 2.11.1 | MIT | LICENSE |
 | digest 0.10.7 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
 | digest 0.11.3 | MIT OR Apache-2.0 | LICENSE-APACHE, LICENSE-MIT |
-| ecolor 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
+| ecolor 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
 | ed25519 2.2.3 | Apache-2.0 OR MIT | LICENSE-APACHE, LICENSE-MIT |
 | ed25519-dalek 2.2.0 | BSD-3-Clause | LICENSE |
-| eframe 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| egui 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| egui-winit 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| egui_glow 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
-| emath 0.28.1 | MIT OR Apache-2.0 | Текст не найден в корне пакета |
+| eframe 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| egui 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| egui-winit 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| egui_glow 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
+| emath 0.28.1 | MIT OR Apache-2.0 | См. проверенные upstream-тексты выше |
 | epaint 0.28.1 | (MIT OR Apache-2.0) AND OFL-1.1 AND LicenseRef-UFL-1.0 | fonts/emoji-icon-font-mit-license.txt, fonts/Hack-Regular.txt, fonts/OFL.txt, fonts/UFL.txt |
 | equivalent 1.0.2 | Apache-2.0 OR MIT | LICENSE-APACHE, LICENSE-MIT |
 | error-code 3.4.0 | BSL-1.0 | LICENSE |

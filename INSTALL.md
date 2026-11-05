@@ -9,7 +9,7 @@
 ---
 
 
-# Установка FLOW BRIDGE v0.1.1 Beta
+## Установка отдельного расширения Chrome 0.1.1 Beta
 
 Поддерживаемые платформы: Windows и macOS.
 Браузер: Google Chrome.
