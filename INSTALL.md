@@ -1,6 +1,17 @@
+# Установка FLOW BRIDGE для Windows x64
+
+1. Скачайте `FlowBridge_v0.1.8_Setup.exe` и `SHA256SUMS.txt` на [странице релиза](https://github.com/jcmir/flow-bridge-downloads/releases/tag/v0.1.8). Официальное зеркало — [сервер FLOW BRIDGE](https://flowbridge-api.ragzond.ru/downloads/FlowBridge_v0.1.8_Setup.exe).
+2. В PowerShell выполните `Get-FileHash .\FlowBridge_v0.1.8_Setup.exe -Algorithm SHA256`. Сверьте результат с файлом контрольных сумм.
+3. Установщик не подписан Authenticode. Проверьте источник загрузки и контрольную сумму перед запуском. Затем следуйте инструкциям установщика и ознакомьтесь с показываемыми им условиями.
+
+Приложение бесплатно, исходный код собственных компонентов закрыт. Проекты обновлённых условий доступны для review: [лицензия](LICENSE.txt), [EULA](EULA.md), [конфиденциальность](PRIVACY.md) и [уведомления](THIRD_PARTY_NOTICES.md).
+
+---
+
+
 # Установка FLOW BRIDGE v0.1.1 Beta
 
-Поддерживаемые платформы: Windows и macOS.  
+Поддерживаемые платформы: Windows и macOS.
 Браузер: Google Chrome.
 
 ---

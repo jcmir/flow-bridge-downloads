@@ -1,3 +1,14 @@
+## FLOW BRIDGE для Windows x64
+
+FLOW BRIDGE 0.1.8 — бесплатное приложение с закрытым исходным кодом собственных компонентов. Установка не требует платной подписки, добровольная поддержка проекта остаётся необязательной.
+
+- [Официальный релиз Windows 0.1.8](https://github.com/jcmir/flow-bridge-downloads/releases/tag/v0.1.8)
+- [Установка и проверка SHA-256](INSTALL.md)
+- Проекты документов для согласования: [лицензия](LICENSE.txt), [EULA](EULA.md), [конфиденциальность](PRIVACY.md), [сторонние компоненты](THIRD_PARTY_NOTICES.md).
+
+Текущий Windows Installer не имеет подписи Authenticode. FLOW BRIDGE — независимый проект, Google не является его издателем или службой поддержки.
+
+
 # FLOW BRIDGE — Google Flow в Chrome
 
 **FLOW BRIDGE** — независимое расширение для Google Chrome, которое помогает открывать и использовать веб-интерфейс Google Flow в регионах, где доступ к сервису ограничен.
